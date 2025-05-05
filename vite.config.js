@@ -30,11 +30,12 @@ export default defineConfig({
 		fileName: __package_name
 	},
 	rollupOptions: {
-	  external: ['react', 'react-dom', 'react-router', 'lodash', 'tailwind-merge'],
+	  external: ['react', 'react-dom', 'react-router', 'react-markdown', 'lodash', 'tailwind-merge'],
 	  output: {
 		globals: {
 			react: 'React',
 			'react-router': 'reactRouter',
+			'react-markdown': 'Markdown',
 			lodash: '_',
 			'tailwind-merge': 'tailwindMerge'
 		}
