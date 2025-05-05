@@ -5,7 +5,6 @@ export {default as CommonMarkdown}		from '#Components/CommonMarkdown'
 export {default as Form}			 	from '#Components/Form'
 export {default as TextInput}			from '#Components/TextInput'
 export {default as LegaleseMarkdown}	from '#Components/LegaleseMarkdown'
-export {default as RouteLink}			from '#Components/RouteLink'
 export {default as Spinner}				from '#Components/Spinner'
 
 export {
