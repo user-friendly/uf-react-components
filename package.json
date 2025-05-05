@@ -1,17 +1,62 @@
 {
   "name": "uf-react-components",
-  "author": "User Friendly",
+  "author": "User Friendly <pivanov@user-friendly.dev>",
   "homepage": "https://github.com/user-friendly",
   "description": "React components shared by user-friendly.dev apps.",
-  "version": "0.1.0-beta1",
-  "type": "module",
+  "version": "0.1.0-beta2",
   "license": "BSD-3-Clause",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
 	"react",
 	"react-component",
 	"form"
-  ]
+  ],
+  "type": "module",
+  "module": "./dist/uf-react-components.js",
+  "main": "./dist/uf-react-components.umd.cjs",
+  "exports": {
+  	".": {
+  		"import": "./dist/uf-react-components.js",
+  		"require": "./dist/uf-react-components.umd.cjs"
+  	},
+  	"./style.css": "./dist/uf-react-components.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "NODE_ENV=development vite build --mode development",
+    "build-qa": "NODE_ENV=testing vite build --mode testing",
+    "build-stage": "NODE_ENV=staging vite build --mode staging",
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint-force-color": "eslint . --color",
+    "format": "prettier --write src/",
+    "format-check": "prettier -c src/"
+  },
+  "dependencies": {
+    "react-markdown": "^9.0.3",
+    "lodash": "^4.17.21",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.20.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "prettier": "^3.5.0",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.1.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.5"
+  },
+  "imports": {
+    "#*": "/src/*"
+  }
 }
